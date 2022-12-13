@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background">
+
+    <TextView
+        android:id="@+id/titre_liste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/titre_add_chrono"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="30sp">
+    </TextView>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/EdtChronoName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+
+            android:hint="@string/nom_chrono"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:minHeight="48dp" />
+
+        <!--button for adding new chrono-->
+        <Button
+            android:id="@+id/BtnAddChrono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:layout_alignParentBottom="true"
+            android:text="@string/btn_add"
+            android:textAllCaps="false" />
+    </RelativeLayout>
+
+
+</LinearLayout>

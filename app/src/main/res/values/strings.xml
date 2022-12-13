@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Chronomètre</string>
+    <string name="new_chrono">Nouveau Chronomètre</string>
+    <string name="liste_chrono">Liste Chronomètres</string>
+    <string name="liste_fraguement">liste fragment</string>
+    <string name="nouveau_fraguement">nouveau chrono fragment</string>
+    <string name="btn_add">Ajouter chronomètre</string>
+    <string name="nom_chrono">Nom</string>
+    <string name="liste_fragment_titre">Liste</string>
+    <string name="titre_add_chrono">Ajouter</string>
+    <string name="edit_name_hint">name</string>
+    <string name="edit_button_text">Valider</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
