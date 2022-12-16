@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.chronometre.Modal.ChronoModal;
 import com.example.chronometre.R;
 import com.example.chronometre.ViewHolder;
-import com.example.chronometre.updateActivity;
+import com.example.chronometre.UpdateActivity;
 
 import java.util.ArrayList;
 
@@ -39,7 +39,7 @@ public class ChronoRVAdapter extends RecyclerView.Adapter<ViewHolder> {
         holder.getTimer().setText(modal.getChronoTimer());
 
         holder.itemView.setOnClickListener(v -> {
-            Intent i = new Intent(context, updateActivity.class);
+            Intent i = new Intent(context, UpdateActivity.class);
 
             i.putExtra("name", modal.getChronoName());
             i.putExtra("Timer", modal.getChronoTimer());

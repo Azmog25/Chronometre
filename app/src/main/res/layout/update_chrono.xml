@@ -18,7 +18,7 @@
         android:id="@+id/chronometer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:format="HH:MM:SS"
+
         android:gravity="center"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/edit_button"
