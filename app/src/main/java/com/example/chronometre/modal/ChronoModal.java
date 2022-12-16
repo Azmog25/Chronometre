@@ -1,4 +1,4 @@
-package com.example.chronometre.Modal;
+package com.example.chronometre.modal;
 
 public class ChronoModal {
     private String chronoName;

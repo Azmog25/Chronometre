@@ -41,12 +41,9 @@ public class UpdateActivity extends AppCompatActivity {
         boutonRestore = findViewById(R.id.restore_chrono);
 
         dbHandler = new DBHandler(UpdateActivity.this);
-
         chronoName = getIntent().getStringExtra("name");
-
         chronoNameEdt.setText(chronoName);
         editBtn = findViewById(R.id.edit_button);
-
         timeWhenStopped = 0L;
 
         boutonStart.setOnClickListener(v -> {
@@ -74,9 +71,7 @@ public class UpdateActivity extends AppCompatActivity {
 
         editBtn.setOnClickListener(v -> {
             dbHandler.updateChrono(chronoName, chronoNameEdt.getText().toString(), chronoTimer.getText().toString());
-
             Toast.makeText(UpdateActivity.this, "Course Updated..", Toast.LENGTH_SHORT).show();
-
             Intent i = new Intent(UpdateActivity.this, MainActivity.class);
             startActivity(i);
         });

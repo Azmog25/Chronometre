@@ -7,9 +7,10 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import com.example.chronometre.Modal.ChronoModal;
+import com.example.chronometre.modal.ChronoModal;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DBHandler extends SQLiteOpenHelper {
     private static final String DB_NAME = "DB_CHRONO";
@@ -18,7 +19,6 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String ID_COL = "id";
     private static final String NAME_COL = "name";
     private static final String TIMER_COL = "timer";
-
 
     public DBHandler(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -30,8 +30,6 @@ public class DBHandler extends SQLiteOpenHelper {
                 + ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + NAME_COL + " TEXT,"
                 + TIMER_COL + " TEXT)";
-
-
         db.execSQL(query);
     }
 
@@ -45,10 +43,9 @@ public class DBHandler extends SQLiteOpenHelper {
         db.close();
     }
 
-    public ArrayList<ChronoModal> readChrono() {
+    public List<ChronoModal> readChrono() {
         Log.i("BDD", "test");
         SQLiteDatabase db = this.getReadableDatabase();
-
         Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
         ArrayList<ChronoModal> liste = new ArrayList<>();
 
@@ -58,19 +55,15 @@ public class DBHandler extends SQLiteOpenHelper {
                 Log.i("BDD", cursor.getString(1));
             } while (cursor.moveToNext());
         }
-
         cursor.close();
-
         return liste;
     }
 
     public void updateChrono(String originalChronoName, String chronoName, String timer) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-
         values.put(NAME_COL, chronoName);
         values.put(TIMER_COL, timer);
-
         db.update(TABLE_NAME, values, "name=?", new String[]{originalChronoName});
         db.close();
     }

@@ -9,18 +9,18 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.chronometre.Modal.ChronoModal;
+import com.example.chronometre.modal.ChronoModal;
 import com.example.chronometre.R;
 import com.example.chronometre.ViewHolder;
 import com.example.chronometre.UpdateActivity;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class ChronoRVAdapter extends RecyclerView.Adapter<ViewHolder> {
-    private final ArrayList<ChronoModal> liste;
+    private final List<ChronoModal> liste;
     private final Context context;
 
-    public ChronoRVAdapter(ArrayList<ChronoModal> liste, Context context) {
+    public ChronoRVAdapter(List<ChronoModal> liste, Context context) {
         this.liste = liste;
         this.context = context;
     }
@@ -40,10 +40,8 @@ public class ChronoRVAdapter extends RecyclerView.Adapter<ViewHolder> {
 
         holder.itemView.setOnClickListener(v -> {
             Intent i = new Intent(context, UpdateActivity.class);
-
             i.putExtra("name", modal.getChronoName());
             i.putExtra("Timer", modal.getChronoTimer());
-
             context.startActivity(i);
         });
     }
