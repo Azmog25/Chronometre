@@ -3,6 +3,7 @@ package com.example.chronometre;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.EditText;
@@ -18,7 +19,7 @@ public class UpdateActivity extends AppCompatActivity {
     String chronoName;
     String time;
     Button editBtn;
-
+    Button deleteChrono;
     private DBHandler dbHandler;
     private Button boutonStart;
     private Button boutonStop;
@@ -33,6 +34,7 @@ public class UpdateActivity extends AppCompatActivity {
         setContentView(R.layout.update_chrono);
 
         chronoNameEdt = findViewById(R.id.edit_name);
+        deleteChrono = findViewById(R.id.delete_Button);
         chronoTimer = findViewById(R.id.chronometer);
         boutonStart = findViewById(R.id.start_chrono);
         boutonStop = findViewById(R.id.stop_chrono);
@@ -62,6 +64,12 @@ public class UpdateActivity extends AppCompatActivity {
             timeWhenStopped = 0L;
             chronoTimer.setBase(SystemClock.elapsedRealtime());
             chronoTimer.start();
+        });
+
+        deleteChrono.setOnClickListener(v -> {
+            dbHandler.deleteChrono(chronoNameEdt.getText().toString());
+            MainActivity mainActivity = new MainActivity();
+            mainActivity.recreateMain();
         });
 
         editBtn.setOnClickListener(v -> {

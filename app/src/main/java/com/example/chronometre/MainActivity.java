@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         });
 
+
     }
 
     private void ReplaceFragment(Fragment fragment) {
@@ -43,5 +44,9 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frame_layout, fragment);
         fragmentTransaction.commit();
+    }
+
+    public void recreateMain(){
+        this.recreate();
     }
 }
