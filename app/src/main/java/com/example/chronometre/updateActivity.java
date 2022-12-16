@@ -37,17 +37,15 @@ public class updateActivity extends AppCompatActivity {
 
         chronoNameEdt.setText(chronoName);
         chronoTimer.setText(time);
+        editBtn = findViewById(R.id.edit_button);
 
-        editBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dbHandler.updateChrono(chronoName, chronoNameEdt.getText().toString(), chronoTimer.getText().toString());
+        editBtn.setOnClickListener(v -> {
+            dbHandler.updateChrono(chronoName, chronoNameEdt.getText().toString(), chronoTimer.getText().toString());
 
-                Toast.makeText(updateActivity.this, "Course Updated..", Toast.LENGTH_SHORT).show();
+            Toast.makeText(updateActivity.this, "Course Updated..", Toast.LENGTH_SHORT).show();
 
-                Intent i = new Intent(updateActivity.this, MainActivity.class);
-                startActivity(i);
-            }
+            Intent i = new Intent(updateActivity.this, MainActivity.class);
+            startActivity(i);
         });
     }
 }

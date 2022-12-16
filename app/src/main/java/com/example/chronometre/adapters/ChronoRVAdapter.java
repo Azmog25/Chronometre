@@ -38,16 +38,13 @@ public class ChronoRVAdapter extends RecyclerView.Adapter<ViewHolder> {
         holder.getName().setText(modal.getChronoName());
         holder.getTimer().setText(modal.getChronoTimer());
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(context, updateActivity.class);
+        holder.itemView.setOnClickListener(v -> {
+            Intent i = new Intent(context, updateActivity.class);
 
-                i.putExtra("name", modal.getChronoName());
-                i.putExtra("Timer", modal.getChronoTimer());
+            i.putExtra("name", modal.getChronoName());
+            i.putExtra("Timer", modal.getChronoTimer());
 
-                context.startActivity(i);
-            }
+            context.startActivity(i);
         });
     }
 
